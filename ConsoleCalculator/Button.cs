@@ -1,9 +1,9 @@
 ﻿class Button
 {
     public int Left, Top;
-    public char Text;
+    public string Text;
 
-    public void Create(int left, int top, char text)
+    public void Create(int left, int top, string text)
     {
         Left = left;
         Top = top;
@@ -19,10 +19,11 @@
     public void Show()
     {
         Console.SetCursorPosition(Left, Top);
-        Console.Write("     ");
+        Console.Write("      ");
         Console.SetCursorPosition(Left, Top + 1);
-        Console.Write($"  {Text}  ");
+        var displayText = Text.Length == 1 ? $"{Text} " : Text;
+        Console.Write($"  {displayText}  ");
         Console.SetCursorPosition(Left, Top + 2);
-        Console.Write("     ");
+        Console.Write("      ");
     }
 }
