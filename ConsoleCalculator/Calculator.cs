@@ -15,9 +15,31 @@ class Calculator
 
     public void Start()
     {
+        DisplayBackground();
         ShowDisplayBox();
         ShowAllButtons();
+
+        // What is this for
         Console.ReadKey();
+    }
+
+    private void DisplayBackground()
+    {
+        Console.BackgroundColor = ConsoleColor.Yellow;
+        Console.ForegroundColor = ConsoleColor.Blue;
+
+        var s = new string(' ', 32);
+
+        for (int row = 2; row <= 15; row++)
+        {
+            Console.SetCursorPosition(17, row);
+            Console.WriteLine(s);
+        }
+
+        Console.SetCursorPosition(20, 3);
+        Console.WriteLine("WAI IT CALCULATOR");
+
+        Console.ResetColor();
     }
 
     private Button CreateAButton(int left, int top, char text)
@@ -33,19 +55,19 @@ class Calculator
 
     private void ShowAllButtons()
     {
-        buttonPercent = CreateAButton(20, 6, '%');
-        buttonClearEverything = CreateAButton (27, 6, 'E');
-        buttonClear = CreateAButton(34, 6, 'C');
-        buttonBack = CreateAButton(41, 6, 'B');
-        buttonReciprocal = CreateAButton(20, 10, 'R');
-        buttonSquare = CreateAButton(27, 10, 'S');
+        buttonPercent = CreateAButton(20, 9, '%');
+        buttonClearEverything = CreateAButton (27, 9, 'E');
+        buttonClear = CreateAButton(34, 9, 'C');
+        buttonBack = CreateAButton(41, 9, 'B');
+        buttonReciprocal = CreateAButton(20, 13, 'R');
+        buttonSquare = CreateAButton(27, 13, 'S');
         Console.ResetColor();
     }
 
     private void ShowDisplayBox()
     {
         displayBox = new DisplayBox();
-        displayBox.Create(20, 2, 26);
+        displayBox.Create(20, 5, 26);
         displayBox.SetColor(ConsoleColor.White, ConsoleColor.Cyan);
         displayBox.Show();
         Console.ResetColor();
