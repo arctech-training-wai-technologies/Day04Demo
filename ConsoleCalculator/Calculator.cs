@@ -33,11 +33,11 @@ class Calculator
         for (int row = 2; row <= 15; row++)
         {
             Console.SetCursorPosition(17, row);
-            Console.WriteLine(s);
+            Console.Write(s);
         }
 
         Console.SetCursorPosition(20, 3);
-        Console.WriteLine("WAI IT CALCULATOR");
+        Console.Write("WAI IT CALCULATOR");
 
         Console.ResetColor();
     }

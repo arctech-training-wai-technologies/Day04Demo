@@ -7,5 +7,5 @@ B. DisplayBox
 C. Button
 */
 
-Calculator c = new Calculator();
-c.Start();
+var calculator = new Calculator();
+calculator.Start();
